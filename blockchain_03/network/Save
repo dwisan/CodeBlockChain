@@ -1,0 +1,97 @@
+Sommaire
+
+
+Cryptographie
+Preuves à divulgation nulle de connaissance
+Signature digital
+Message Authentication Code (MAC)
+Security concerns (HMAC vs MAC with only hash)
+Replay attack
+Merkle Tree
+Algorithmes de preuve de travail
+Qu’est-ce une preuve de travail ? Parler de Hashcash.
+Analyses
+Généralités sur une blockchain
+Notion de transactions et de blocs
+Algorithmes de consensus
+car réseau décentralisé (parler des différentes topo de réseau et pourquoi on a besoin d’algo de consensus).
+
+
+Présentation de l’application
+Choix technologiques
+Diagramme UML
+Infrastructure réseau
+
+Notions, préambule ???
+Complexité
+Parler de la notation big O avec les différentes complexités connues.
+Parler également des problèmes NP, temps non fini …
+Ajouter des graphique pour apporter une aide visuelle.
+Exemple, je parle de O(n), O(n²), O(log2(n)) -> ajouter une représentation graphique de ces différentes fonctions pour bien comprendre. En x on doit avoir les “n” qui représentent le nombre d’entrées dans l’algorithme.
+
+Pourquoi en parler ici ? Car nous allons faire des analyses de complexité au travers de ce document.
+Généralités sur une blockchain
+Parler des différents problèmes que soulèvent un système totalement décentralisé. /!\, Expliquer également ce qu’est un système décentralisé avec les différentes topologies existante.
+
+Il est nécessaire d’introduire le sujet. Ensuite nous allons parler de crypto, on peut amorcer le sujet car cela permet de sécuriser la blockchain. Celle-ci est basée sur certaines notions de crypto qu’on doit donc développer.
+Cryptographie
+Preuves à divulgation nulle de connaissance
+Donner l’exemple des stylos de couleurs ?
+Donner les trois critères importants pour ces preuves !
+
+Signature digital
+Qu’est-ce une signature digital & les cas d’utilisations.
+
+Différents algorithmes
+Parler de la famille MD5, SHA. Ils sont construits avec une construction “Merkle–Damgård construction” (important détail pour la section suivante).
+
+Length extension attack
+Talk about it.
+
+Replay attack
+Talk about it.
+Merkle Tree
+Présentation générale avec schéma !
+Pourquoi utiliser un Merkle Tree
+Parler du Merke proof & path. -> parler de la complexité car c’est en grande partie pour ça qu’on l’utilise.
+
+Benchmark
+On vient de dire que la complexité est moindre. Il faut désormais le prouver !
+Pour un benchmark digne de ce nom, il faut donner la configuration de la machine, OS / RAM surtout.
+
+Autres cas d’utilisations
+En très brefs donner d’autres cas d’utilisations. Ex base de données Cassandra, logiciel Git ect.
+
+Transactions et blocs
+Transactions
+Talk bout it.
+Sécurité des transactions
+Introduction des Preuves à divulgation nulle de connaissance, chiffrement asynchrone. Algorithmes : RSA & ECDSA à parler brièvement. ECDSA est très intéressant, alternative au RSA utilisé sur toutes les blockchains à ma connaissance (bitcoin, Ethereum& tous les fork’s).
+
+Sécurité envers le “double spent problem”.
+Je ne sais pas vraiment où parler de ce problème… Il faut évoquer le problème et dire comment c’est résolu dans la blockchain, les techniques mises en oeuvre.
+
+Simplified Payment Verification : see bitcoin whitepaper. Ca justifie également l’utilisation des Merkle Tree’s.
+
+Extrait de wikipédia https://en.wikipedia.org/wiki/Bitcoin_network
+“Upon receiving a new transaction a node must validate it: in particular, verify that none of the transaction's inputs have been previously spent. To carry out that check, the node needs to access the blockchain. Any user who does not trust his network neighbors, should keep a full local copy of the blockchain, so that any input can be verified.
+
+As noted in Nakamoto's whitepaper, it is possible to verify bitcoin payments without running a full network node (simplified payment verification, SPV). A user only needs a copy of the block headers of the longest chain, which are available by querying network nodes until it is apparent that the longest chain has been obtained. Then, get the Merkle branch linking the transaction to its block. Linking the transaction to a place in the chain demonstrates that a network node has accepted it, and blocks added after it further establish the confirmation.”
+
+Blocs
+Sécurité des Blocs
+Parler des 51%
+
+Algorithme de consensus
+On vient de voir les blocs et le minage. Ils introduisent un problème qui doit être résolu par un consensus global des mineurs.
+
+
+
+
+
+Brouillon trash
+
+A digital signature serves three purposes in bitcoin (see the following sidebar).
+First, the signature proves that the owner of the private key, who is by implication the owner of the funds, has authorized the spending of those funds.
+Secondly, the proof of authorization is undeniable (nonrepudiation).
+Thirdly, the signature proves that the transaction (or specific parts of the transaction) have not and cannot be modified by anyone after it has been signed.
